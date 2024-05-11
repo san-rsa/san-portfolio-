@@ -1,0 +1,21 @@
+.foot {
+    margin: 0;
+    padding: 1%;
+}
+
+.foot *{
+    padding: 1%;
+    border: 0;
+    margin: 9;
+}
+
+p {
+    margin: 0;
+    padding: 3%;
+    font-size: larger;
+}
+
+.head {
+    height: 25px;
+    width: 25px;
+}
