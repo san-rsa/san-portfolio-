@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@chakra-ui/react": "^2.3.2",
+    "@emailjs/browser": "^4.3.3",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
@@ -15,6 +16,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.3",
+    "email-js": "^2.0.3",
     "firebase": "^10.10.0",
     "formik": "^2.2.9",
     "framer-motion": "^7.3.5",

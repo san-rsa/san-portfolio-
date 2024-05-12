@@ -19,3 +19,7 @@ p {
     height: 25px;
     width: 25px;
 }
+
+#type * {
+    background-color: rgb(18, 14, 56);
+}
