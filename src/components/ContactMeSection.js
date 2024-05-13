@@ -1,5 +1,3 @@
-
-// import 'dotenv/config'
 import React, {useEffect, useRef, useState} from "react";
 import "./footer.css"
 import { useFormik } from "formik";
@@ -22,46 +20,7 @@ import {useAlertContext} from "../context/alertContext";
  import { Link } from "react-router-dom";
  import emailjs from '@emailjs/browser';
 
-// import nodemailer from 'nodemailer';
-
 const LandingSection = () => {
-
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-  };
-  const handleMessageChange = (e) => {
-    setMessage(e.target.value);
-  };
-  const sendEmail2 = async () => {
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.example.com',
-      port: 587,
-      secure: false,
-      auth: {
-        user: 'your-email@example.com',
-        pass: 'your-password',
-      },
-    });
-    const mailOptions = {
-      from: 'your-email@example.com',
-      to: email,
-      subject: 'Hello from ReactJS',
-      text: message,
-    };
-    try {
-      await transporter.sendMail(mailOptions);
-      console.log('Email sent successfully');
-    } catch (error) {
-      console.error('Error sending email:', error);
-    }
-  };
-
-
-
-
-
 
 
   const {isLoading, response, submit} = useSubmit();
@@ -85,13 +44,12 @@ const LandingSection = () => {
 
 
 
-
   const form = useRef();
 
 const sendEmail = (e) => {
 e.preventDefault();
 // service_id, templte_id and public key will get from Emailjs website when you create account and add template service and email service 
-emailjs.sendForm("service_i87a8cr", "template_6lzlcdm", form.current, "2sLUd6sdcxz6mhAaE")
+emailjs.sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, process.env.REACT_APP_P_KEY)
   .then((result) => {
       console.log(result);
       document.getElementById("form").reset()
